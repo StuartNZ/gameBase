@@ -60,6 +60,9 @@ class Main extends dn.Process {
 		controller.bind(SELECT, Key.R);
 		controller.bind(START, Key.N);
 
+		// var tf = new h2d.Text(hxd.res.DefaultFont.get(), s2d);
+		// tf.text = "Hello World !";
+
 		// Start
 		new dn.heaps.GameFocusHelper(Boot.ME.s2d, Assets.fontMedium);
 		delayer.addF( startGame, 1 );

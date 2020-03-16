@@ -1,3 +1,4 @@
+import en.Enemy;
 import dn.Process;
 import hxd.Key;
 
@@ -28,6 +29,12 @@ class Game extends Process {
 		hud = new ui.Hud();
 
 		trace(Lang.t._("Game is ready."));
+
+		// Create Hero
+
+		new en.Hero(5,5);
+
+		new en.Enemy(10,10);
 	}
 
 	public function onCdbReload() {
