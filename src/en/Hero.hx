@@ -2,7 +2,10 @@ package en;
 
 class Hero extends Entity {
 
-    var ca : dn.heaps.Controller.ControllerAccess;
+	var ca : dn.heaps.Controller.ControllerAccess;
+	var mx = 0;
+
+	var apressed = false;
 
 	public function new(x,y) {
 		super(x,y);
@@ -34,5 +37,18 @@ class Hero extends Entity {
 
 		if( ca.downDown() || ca.isKeyboardDown(hxd.Key.DOWN) )
 			dy += 0.1*tmod;
+
+	
+		if(ca.aDown()){
+
+			if(!apressed){
+				var tf = new h2d.Text(hxd.res.DefaultFont.get(), Main.ME.root);
+				tf.text = "A is pressed !" + mx;
+			
+				mx += mx + 1;
+
+					apressed = true;
+			}
+		}
 	}
 }

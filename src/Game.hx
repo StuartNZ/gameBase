@@ -30,10 +30,13 @@ class Game extends Process {
 
 		trace(Lang.t._("Game is ready."));
 
-		// Create Hero
+		// var tf = new h2d.Text(hxd.res.DefaultFont.get(), Main.ME.root);
+        // tf.text = "Hello World !";
 
+		// Create Hero
 		new en.Hero(5,5);
 
+		// Create Enemy
 		new en.Enemy(10,10);
 	}
 
