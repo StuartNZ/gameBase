@@ -1,6 +1,6 @@
 
-tiles.png
-size: 64,64
+game02.png
+size: 512,512
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
@@ -58,5 +58,19 @@ pixel
   xy: 61, 5
   size: 1, 1
   orig: 1, 1
+  offset: 0, 0
+  index: -1
+heroship0
+  rotate: false
+  xy: 1, 77
+  size: 155, 90
+  orig: 155,90
+  offset: 0, 0
+  index: -1
+heroship1
+  rotate: false
+  xy: 1, 173
+  size: 155, 90
+  orig: 155,90
   offset: 0, 0
   index: -1

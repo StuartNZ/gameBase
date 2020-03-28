@@ -11,10 +11,12 @@ class Hero extends Entity {
 		super(x,y);
 
 		// Some default rendering for our character
-		var g = new h2d.Graphics(spr);
-		g.beginFill(0xff0000);
-        g.drawRect(0,0,16,16);
-        
+		// var g = new h2d.Graphics(spr);
+		// g.beginFill(0xff0000);
+        // g.drawRect(0,0,16,16);
+		
+		spr.anim.registerStateAnim("heroship",1, 0.025);
+
         ca = Main.ME.controller.createAccess("hero"); // creates an instance of controller
     }
     
