@@ -74,3 +74,10 @@ heroship1
   orig: 155,90
   offset: 0, 0
   index: -1
+fxHalo0
+  rotate: false
+  xy: 1, 1
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1

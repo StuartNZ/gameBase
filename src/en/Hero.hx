@@ -42,14 +42,16 @@ class Hero extends Entity {
 
 	
 		if(ca.aDown()){
-
+			fx.lightSpot(dx, dy, 0xff0000, rnd(0.15,0.18));
 			if(!apressed){
 				var tf = new h2d.Text(hxd.res.DefaultFont.get(), Main.ME.root);
 				tf.text = "A is pressed !" + mx;
 			
 				mx += mx + 1;
 
-					apressed = true;
+				apressed = true;
+
+				fx.lightSpot(dx, dy, 0xff0000, rnd(0.15,0.18));
 			}
 		}
 	}

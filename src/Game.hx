@@ -37,7 +37,7 @@ class Game extends Process {
 		new en.Hero(5,5);
 
 		// Create Enemy
-		new en.Enemy(10,10);
+		//new en.Enemy(10,10);
 	}
 
 	public function onCdbReload() {
