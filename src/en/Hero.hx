@@ -42,16 +42,22 @@ class Hero extends Entity {
 
 		// Engine
 
-		fx.lazerblast(spr.x-140, spr.y-85, 0x00ff00, rnd(0.15,0.18));
-		fx.lazerblast(spr.x-132, spr.y-80, 0x00ff00, rnd(0.15,0.18));
-		fx.lazerblast(spr.x-138, spr.y-76, 0x00ff00, rnd(0.15,0.18));
+		fx.backrocket(spr.x-140, spr.y-85, 0x00ff00, rnd(0.15,0.18));
+		fx.backrocket(spr.x-132, spr.y-80, 0x00ff00, rnd(0.15,0.18));
+		fx.backrocket(spr.x-138, spr.y-76, 0x00ff00, rnd(0.15,0.18));
+
+
+
 
 		if(ca.aDown()){
 			
 			var tf = new h2d.Text(hxd.res.DefaultFont.get(), Main.ME.root);
 				tf.text = "A is pressed !" + mx;
 			
-			
+			//fx.shotblast(spr.x+138, spr.y-26, 0x00ff00, rnd(0.15,0.18));
+
+			fx.shotblast(spr.x+138, spr.y-26, 0x00ff00, 1);
+
 			//fx.lightSpot(spr.x, spr.y, 0x00ff00, rnd(0.15,0.18));
 
 			//fx.lazerblast(spr.x+133, spr.y-35, 0x00ff00, rnd(0.15,0.18));
