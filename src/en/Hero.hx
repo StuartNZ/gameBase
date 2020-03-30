@@ -40,19 +40,22 @@ class Hero extends Entity {
 		if( ca.downDown() || ca.isKeyboardDown(hxd.Key.DOWN) )
 			dy += 0.1*tmod;
 
-	
+		// Engine
+
+		fx.lazerblast(spr.x-140, spr.y-85, 0x00ff00, rnd(0.15,0.18));
+		fx.lazerblast(spr.x-132, spr.y-80, 0x00ff00, rnd(0.15,0.18));
+		fx.lazerblast(spr.x-138, spr.y-76, 0x00ff00, rnd(0.15,0.18));
+
 		if(ca.aDown()){
-			fx.lightSpot(dx, dy, 0x00ff00, rnd(0.15,0.18));
-			if(!apressed){
-				var tf = new h2d.Text(hxd.res.DefaultFont.get(), Main.ME.root);
+			
+			var tf = new h2d.Text(hxd.res.DefaultFont.get(), Main.ME.root);
 				tf.text = "A is pressed !" + mx;
 			
-				mx += mx + 1;
+			
+			//fx.lightSpot(spr.x, spr.y, 0x00ff00, rnd(0.15,0.18));
 
-				apressed = true;
-
-				fx.lightSpot(dx, dy, 0xff0000, rnd(0.15,0.18));
-			}
+			//fx.lazerblast(spr.x+133, spr.y-35, 0x00ff00, rnd(0.15,0.18));
+			
 		}
 	}
 }

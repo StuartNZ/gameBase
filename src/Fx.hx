@@ -149,6 +149,18 @@ class Fx extends dn.Process {
 	}
 
 
+	public function lazerblast(x:Float, y:Float, c:UInt, a=1.0) {
+		var p = allocTopAdd(getTile("shootLine"), x,y);
+		p.setScale(rnd(2,3));
+		p.setFadeS(a, 0, 0.3);
+		p.colorize(c);
+		p.ds = 0.1;
+		p.dsFrict = 0.9;
+		p.scaleMul = 0.92;
+		p.lifeS = 0.1;
+	}
+
+
 	override function update() {
 		super.update();
 

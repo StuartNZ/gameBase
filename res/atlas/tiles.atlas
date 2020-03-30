@@ -81,3 +81,10 @@ fxHalo0
   orig: 64, 64
   offset: 0, 0
   index: -1
+shootLine0
+  rotate: false
+  xy: 24, 45
+  size: 33, 1
+  orig: 33, 1
+  offset: 0, 0
+  index: -1  
