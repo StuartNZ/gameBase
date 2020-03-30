@@ -7,6 +7,10 @@ class Hero extends Entity {
 
 	var apressed = false;
 
+	var timerCounter:Float = 0;
+	var maxTimerCounter:Float = 5;
+
+
 	public function new(x,y) {
 		super(x,y);
 
@@ -46,23 +50,27 @@ class Hero extends Entity {
 		fx.backrocket(spr.x-132, spr.y-80, 0x00ff00, rnd(0.15,0.18));
 		fx.backrocket(spr.x-138, spr.y-76, 0x00ff00, rnd(0.15,0.18));
 
+		// Flasing light
+		timerCounter += 0.1*tmod;  // Fix this 
 
+		if (timerCounter > maxTimerCounter){
+			//onTimerComplete();
+			fx.lightSpot(spr.x-40, spr.y-80, 0x0000ff, 0.9);
+			timerCounter = 0;
+		}
 
-
+		// Shooting
 		if(ca.aDown() || ca.isKeyboardDown(hxd.Key.SPACE)){
 			
 			var tf = new h2d.Text(hxd.res.DefaultFont.get(), Main.ME.root);
 				tf.text = "A is pressed !" + mx;
 			
-			//fx.shotblast(spr.x+138, spr.y-26, 0x00ff00, rnd(0.15,0.18));
-
 			fx.shotblast(spr.x+55, spr.y-38, 0x00ff00, 1);
 
 			fx.lightSpot(spr.x+168, spr.y-56, 0xffffff, 1);
 
-
+			//fx.shotblast(spr.x+138, spr.y-26, 0x00ff00, rnd(0.15,0.18));
 			//fx.lightSpot(spr.x, spr.y, 0x00ff00, rnd(0.15,0.18));
-
 			//fx.lazerblast(spr.x+133, spr.y-35, 0x00ff00, rnd(0.15,0.18));
 			
 		}
