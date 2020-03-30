@@ -58,6 +58,9 @@ class Hero extends Entity {
 
 			fx.shotblast(spr.x+138, spr.y-26, 0x00ff00, 1);
 
+			fx.lightSpot(spr.x+168, spr.y-56, 0xffffff, 1);
+
+
 			//fx.lightSpot(spr.x, spr.y, 0x00ff00, rnd(0.15,0.18));
 
 			//fx.lazerblast(spr.x+133, spr.y-35, 0x00ff00, rnd(0.15,0.18));

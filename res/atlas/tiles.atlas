@@ -76,7 +76,7 @@ heroship1
   index: -1
 fxHalo0
   rotate: false
-  xy: 1, 1
+  xy: 127, 1
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
