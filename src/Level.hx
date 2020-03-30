@@ -6,9 +6,8 @@ class Level extends dn.Process {
 	public var hei(get,never) : Int; inline function get_hei() return 4;
 
 	var starx = 443.0;
-	var stary = 43.0;
-	
-	var speed = 3.0;
+	var speed2 = 643.0;
+	var speed3 = -143.0;
 
 	var invalidated = true;
 
@@ -35,6 +34,7 @@ class Level extends dn.Process {
 	public inline function isValid(cx,cy) return cx>=0 && cx<wid && cy>=0 && cy<hei;
 	public inline function coordId(cx,cy) return cx + cy*wid;
 
+	// 3 simple background 'stars'
 
 	public function render() {
 
@@ -43,19 +43,23 @@ class Level extends dn.Process {
 		if(starx < -900) {
 			starx = 900;
 		}
-			
 
-		for(starcluster in 0...stars.length) {
-			var g = new h2d.Graphics(root);
-			g.beginFill(0x0000ff);
-	
-			starx += -0.1*tmod*starspeed[starcluster];
-			stary = stars[starcluster];
-
-			g.drawRect(starx, stary, 3, 3);
-			//trace("[" + starx + "][ "+ stary + "]");
+		if(speed2 < -900) {
+			speed2 = 900;
 		}
 
+		if(speed3 < -900) {
+			speed3 = 900;
+		}
+			
+		starx += -0.1*tmod*22;
+		fx.lightSpot(starx, 88, 0xffffff, 0.04);
+
+		speed2 += -0.1*tmod*44;
+		fx.lightSpot(speed2, 33, 0x0000ff, 0.02);
+
+		speed3 += -0.1*tmod*14;
+		fx.fxsmallcircle(speed3, -83, 0xff00ff, 0.05);
 	}
 
 	override function postUpdate() {
@@ -67,3 +71,4 @@ class Level extends dn.Process {
 		}
 	}
 }
+

@@ -95,3 +95,10 @@ shotBlast0
   orig: 25, 7
   offset: 0, 0
   index: -1  
+ smallcircle0
+  rotate: false
+  xy: 106, 17
+  size: 6, 6
+  orig: 6, 6
+  offset: 0, 0
+  index: -1  

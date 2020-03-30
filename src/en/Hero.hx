@@ -49,14 +49,14 @@ class Hero extends Entity {
 
 
 
-		if(ca.aDown()){
+		if(ca.aDown() || ca.isKeyboardDown(hxd.Key.SPACE)){
 			
 			var tf = new h2d.Text(hxd.res.DefaultFont.get(), Main.ME.root);
 				tf.text = "A is pressed !" + mx;
 			
 			//fx.shotblast(spr.x+138, spr.y-26, 0x00ff00, rnd(0.15,0.18));
 
-			fx.shotblast(spr.x+138, spr.y-26, 0x00ff00, 1);
+			fx.shotblast(spr.x+55, spr.y-38, 0x00ff00, 1);
 
 			fx.lightSpot(spr.x+168, spr.y-56, 0xffffff, 1);
 
