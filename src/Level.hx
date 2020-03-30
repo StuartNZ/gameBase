@@ -2,8 +2,8 @@ class Level extends dn.Process {
 	public var game(get,never) : Game; inline function get_game() return Game.ME;
 	public var fx(get,never) : Fx; inline function get_fx() return Game.ME.fx;
 
-	public var wid(get,never) : Int; inline function get_wid() return 32;
-	public var hei(get,never) : Int; inline function get_hei() return 32;
+	public var wid(get,never) : Int; inline function get_wid() return 4;
+	public var hei(get,never) : Int; inline function get_hei() return 4;
 
 	var starx = 443.0;
 	var stary = 43.0;
