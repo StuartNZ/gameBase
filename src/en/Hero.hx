@@ -76,7 +76,7 @@ class Hero extends Entity {
 			//fx.lazerblast(spr.x+133, spr.y-35, 0x00ff00, rnd(0.15,0.18));
 
 			// Create new Bullet
-			var b = new en.Bullet(this, 0.4);
+			var b = new en.Bullet(this, -22);
 			
 		}
 	}
