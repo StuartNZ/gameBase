@@ -50,20 +50,21 @@ class Level extends dn.Process {
 
 	public function RenderFireball(x:Float, y:Float){
 			// Larger Star
-			//fx.fxsmallcircle(x, y, 0x0000ff, 1);
+			fx.fxsmallcircle(x, y, 0x0000ff, 1);
 
 			// Small Blue Star with Blur
 			//fx.fxpixel(x, y, 0x0000ff, 1);
 
-			fx.fxpixel(x, y, 0x0000ff, 1);
+			// Pixel
+			//fx.fxpixel(x, y, 0x0000ff, 1);
 
-			// FireBall 
-			// fx.lightSpot(
-			// 	x,
-			// 	y,
-			// 	Color.interpolateInt(0xff0000,0xffcc00,rnd(0,1)),
-			// 	0.2
-			// );
+			//FireBall 
+			fx.lightSpot(
+				x,
+				y,
+				Color.interpolateInt(0xff0000,0xffcc00,rnd(0,1)),
+				0.2
+			);
 
 		}
 

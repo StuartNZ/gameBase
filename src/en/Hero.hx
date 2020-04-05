@@ -23,8 +23,9 @@ class Hero extends Entity {
 
 		ca = Main.ME.controller.createAccess("hero"); // creates an instance of controller
 		
+		// Engine Blur
 		var g = new h2d.Graphics(spr);
-		g.beginFill(0x0000ff,0.4);
+		g.beginFill(0x00ff00,0.4);
         g.drawRect(dx-1824,dy-91,1700,16);
     }
     
