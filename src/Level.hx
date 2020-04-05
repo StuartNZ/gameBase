@@ -12,7 +12,7 @@ class Level extends dn.Process {
 	var starcount = 10;
 
 	var min_speed = 30;
-	var speed_range = 70;
+	var speed_range = 110;
 
 	public function new() {
 		super(Game.ME);
@@ -39,7 +39,6 @@ class Level extends dn.Process {
 				stars[counter].y = -100 + Std.random(400);
 				stars[counter].speed = min_speed + Std.random(speed_range);
 			}
-	
 		}
 
 		for(counter in 0...starcount) {
@@ -50,14 +49,19 @@ class Level extends dn.Process {
 	}
 
 	public function RenderFireball(x:Float, y:Float){
-			fx.fxsmallcircle(x, y, 0x0000ff, 1);
+			// Larger Star
+			//fx.fxsmallcircle(x, y, 0x0000ff, 1);
 
-			fx.lightSpot(
-				x,
-				y,
-				Color.interpolateInt(0xff0000,0xffcc00,rnd(0,1)),
-				0.2
-			);
+			// Small Blue Star with Blur
+			fx.fxpixel(x, y, 0x0000ff, 1);
+
+			// FireBall 
+			// fx.lightSpot(
+			// 	x,
+			// 	y,
+			// 	Color.interpolateInt(0xff0000,0xffcc00,rnd(0,1)),
+			// 	0.2
+			// );
 
 		}
 
