@@ -9,7 +9,7 @@ class Level extends dn.Process {
 
 	var invalidated = true;
 
-	var starcount = 10;
+	var starcount = 20;
 
 	var min_speed = 30;
 	var speed_range = 110;
@@ -38,34 +38,61 @@ class Level extends dn.Process {
 				stars[counter].x = 900;
 				stars[counter].y = -100 + Std.random(400);
 				stars[counter].speed = min_speed + Std.random(speed_range);
+				stars[counter].startype = Std.random(4);
 			}
 		}
 
 		for(counter in 0...starcount) {
 			stars[counter].x += -0.1*tmod*stars[counter].speed;
-			RenderFireball(stars[counter].x, stars[counter].y);
+			RenderFireball(stars[counter].x, 
+								stars[counter].y, 
+								stars[counter].startype, 
+								stars[counter].trans);
 		}
 
 	}
 
-	public function RenderFireball(x:Float, y:Float){
-			// Larger Star
-			fx.fxsmallcircle(x, y, 0x0000ff, 1);
+	public function RenderFireball(x:Float, y:Float, startype:Int, trans:Float){
 
-			// Small Blue Star with Blur
-			//fx.fxpixel(x, y, 0x0000ff, 1);
+			if(startype == 0) {
+				// Pixel
+				fx.fxpixel(x, y, 0x00ffff, trans);
 
-			// Pixel
-			//fx.fxpixel(x, y, 0x0000ff, 1);
+				// Doesnt work
+				// var g = new h2d.Graphics(Main.ME.root);
+				// g.beginFill(0x0000ff,1);
+				// g.drawRect(x,y,3,3);
+			}
+			else if(startype == 1) {
+				// Larger Star
+				//fx.fxsmallcircle(x, y, 0x0000ff, 1);
 
-			//FireBall 
-			fx.lightSpot(
-				x,
-				y,
-				Color.interpolateInt(0xff0000,0xffcc00,rnd(0,1)),
-				0.2
-			);
+				// Small Red Animated
+				fx.fxpixel(x, y, Color.interpolateInt(0xff0000,0xffcc00,rnd(0,1)), trans);
+			}
+			else if(startype == 2) {
+				// Fireball v1 
+				fx.fxsmallcircle(x, y, 0x0000ff, trans);
+				fx.lightSpot(
+					x,
+					y,
+					Color.interpolateInt(0xff0000,0xffcc00,rnd(0,1)),
+					0.2
+				);
+			}
+			else if(startype == 3) {
+				// Fireball Blue
+				// fx.fxsmallcircle(x, y, 0x0000ff, 1);
+				// fx.lightSpot(
+				// 	x,
+				// 	y,
+				// 	Color.interpolateInt(0x0000ff,0xffcc00,rnd(0,1)),
+				// 	0.2
+				// );
 
+				// Red Small
+				fx.fxpixel(x, y, 0xff0000, trans);
+			}
 		}
 
 	override function postUpdate() {
@@ -82,11 +109,15 @@ class Star {
 	public var x:Float;
 	public var y:Float;
 	public var speed:Float;
+	public var startype:Int;
+	public var trans:Float;
 
 	public function new(x,y) {
 		this.x = x;
 		this.y = y;
 
 		this.speed = 30 + Std.random(70);
+		this.startype = Std.random(4);
+		this.trans = Math.random();
 	}
 }
