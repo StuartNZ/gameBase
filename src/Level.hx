@@ -53,6 +53,8 @@ class Level extends dn.Process {
 			//fx.fxsmallcircle(x, y, 0x0000ff, 1);
 
 			// Small Blue Star with Blur
+			//fx.fxpixel(x, y, 0x0000ff, 1);
+
 			fx.fxpixel(x, y, 0x0000ff, 1);
 
 			// FireBall 

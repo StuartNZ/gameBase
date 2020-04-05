@@ -21,7 +21,11 @@ class Hero extends Entity {
 		
 		spr.anim.registerStateAnim("heroship",1, 0.025);
 
-        ca = Main.ME.controller.createAccess("hero"); // creates an instance of controller
+		ca = Main.ME.controller.createAccess("hero"); // creates an instance of controller
+		
+		var g = new h2d.Graphics(spr);
+		g.beginFill(0x0000ff,0.4);
+        g.drawRect(dx-1824,dy-91,1700,16);
     }
     
     override function dispose() { // call on garbage collection
@@ -45,7 +49,6 @@ class Hero extends Entity {
 			dy += 0.1*tmod;
 
 		// Engine
-
 		fx.backrocket(spr.x-140, spr.y-85, 0x00ff00, rnd(0.15,0.18));
 		fx.backrocket(spr.x-132, spr.y-80, 0x00ff00, rnd(0.15,0.18));
 		fx.backrocket(spr.x-138, spr.y-76, 0x00ff00, rnd(0.15,0.18));
@@ -79,5 +82,12 @@ class Hero extends Entity {
 			var b = new en.Bullet(this, -22);
 			
 		}
+
+		// Engine
+
+	    // var g = new h2d.Graphics(spr);
+		// g.beginFill(0x0000ff,0.01);
+        // g.drawRect(dx-1824,dy-91,1700,16);
+		
 	}
 }
