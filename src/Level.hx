@@ -53,13 +53,26 @@ class Level extends dn.Process {
 		}
 			
 		starx += -0.1*tmod*22;
-		fx.lightSpot(starx, 88, 0xffffff, 0.04);
+		//fx.lightSpot(starx, 88, 0xffffff, 0.04);
 
 		speed2 += -0.1*tmod*44;
-		fx.lightSpot(speed2, 33, 0x0000ff, 0.02);
+		//fx.lightSpot(speed2, 33, 0x0000ff, 0.02);
 
 		speed3 += -0.1*tmod*14;
-		fx.fxsmallcircle(speed3, -83, 0xff00ff, 0.05);
+		//fx.fxsmallcircle(speed3, -83, 0xff00ff, 0.05);
+
+		speed3 += -0.1*tmod*74;
+
+		// cool
+		var coolh = Math.random() * 0.3 * 100;
+
+		fx.fxsmallcircle(speed3, coolh , 0x0000ff, 1);
+
+		fx.lightSpot(
+			speed3,coolh,
+			Color.interpolateInt(0xff0000,0xffcc00,rnd(0,1)),
+			0.2
+		);
 	}
 
 	override function postUpdate() {
