@@ -72,13 +72,16 @@ class Level extends dn.Process {
 			}
 			else if(startype == 2) {
 				// Fireball v1 
-				fx.fxsmallcircle(x, y, 0x0000ff, trans);
-				fx.lightSpot(
-					x,
-					y,
-					Color.interpolateInt(0xff0000,0xffcc00,rnd(0,1)),
-					0.2
-				);
+				// fx.fxsmallcircle(x, y, 0x0000ff, trans);
+				// fx.lightSpot(
+				// 	x,
+				// 	y,
+				// 	Color.interpolateInt(0xff0000,0xffcc00,rnd(0,1)),
+				// 	0.2
+				// );
+
+
+				fx.fxpixel(x, y, Color.interpolateInt(0x00ff00,0x00ccff,rnd(0,1)), trans);
 			}
 			else if(startype == 3) {
 				// Fireball Blue
