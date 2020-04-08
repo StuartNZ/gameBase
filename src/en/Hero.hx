@@ -51,9 +51,9 @@ class Hero extends Entity {
 			dy += 0.1*tmod;
 
 		// Engine
-		fx.backrocket(spr.x-140, spr.y-85, 0x00ff00, rnd(0.15,0.18));
-		fx.backrocket(spr.x-132, spr.y-80, 0x00ff00, rnd(0.15,0.18));
-		fx.backrocket(spr.x-138, spr.y-76, 0x00ff00, rnd(0.15,0.18));
+		fx.backrocket(spr.x-150, spr.y-140, 0x00ff00, rnd(0.15,0.18));
+		fx.backrocket(spr.x-157, spr.y-145, 0x00ff00, rnd(0.15,0.18));
+		fx.backrocket(spr.x-159, spr.y-150, 0x00ff00, rnd(0.15,0.18));
 
 		// Flasing light
 		timerCounter += 0.1*tmod;  // Fix this 
