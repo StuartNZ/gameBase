@@ -10,6 +10,8 @@ class Hero extends Entity {
 	var timerCounter:Float = 0;
 	var maxTimerCounter:Float = 5;
 
+	var enginedx = 0.0;
+
 
 	public function new(x,y) {
 		super(x,y);
@@ -50,10 +52,24 @@ class Hero extends Entity {
 		if( ca.downDown() || ca.isKeyboardDown(hxd.Key.DOWN) )
 			dy += 0.1*tmod;
 
+		if(enginedx > 1100){
+			enginedx = spr.x- 130;
+		}
+
 		// Engine
 		fx.backrocket(spr.x-150, spr.y-140, 0x00ff00, rnd(0.15,0.18));
 		fx.backrocket(spr.x-157, spr.y-145, 0x00ff00, rnd(0.15,0.18));
 		fx.backrocket(spr.x-159, spr.y-150, 0x00ff00, rnd(0.15,0.18));
+
+		enginedx += 22*tmod;
+		fx.fxpixel(spr.x + enginedx, spr.y-38, 0x00ff00, 2);
+
+		fx.lightSpot(
+			spr.x + enginedx,
+			spr.y-38,
+			Color.interpolateInt(0xff0000,0xffcc00,rnd(0,1)),
+			0.2
+		);
 
 		// Flasing light
 		timerCounter += 0.1*tmod;  // Fix this 
