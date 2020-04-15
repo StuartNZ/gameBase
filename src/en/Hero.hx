@@ -26,7 +26,7 @@ class Hero extends Entity {
 		ca = Main.ME.controller.createAccess("hero"); // creates an instance of controller
 		
 		// Engine Blur
-		// If you add it here it will consstantly display
+		// If you add it here it will constantly display
 		// var g = new h2d.Graphics(spr);
 		// g.beginFill(0x00ff00,0.4);
         // g.drawRect(dx-1824,dy-91,1700,16);
@@ -57,19 +57,11 @@ class Hero extends Entity {
 		}
 
 		// Engine
-		fx.backrocket(spr.x-150, spr.y-140, 0x00ff00, rnd(0.15,0.18));
-		fx.backrocket(spr.x-157, spr.y-145, 0x00ff00, rnd(0.15,0.18));
-		fx.backrocket(spr.x-159, spr.y-150, 0x00ff00, rnd(0.15,0.18));
+		fx.backrocket(spr.x-120, spr.y-140, 0x00ff00, rnd(0.15,0.18));
+		fx.backrocket(spr.x-127, spr.y-145, 0x00ff00, rnd(0.15,0.18));
+		fx.backrocket(spr.x-129, spr.y-150, 0x00ff00, rnd(0.15,0.18));
 
-		enginedx += 22*tmod;
-		fx.fxpixel(spr.x + enginedx, spr.y-38, 0x00ff00, 2);
-
-		fx.lightSpot(
-			spr.x + enginedx,
-			spr.y-38,
-			Color.interpolateInt(0xff0000,0xffcc00,rnd(0,1)),
-			0.2
-		);
+	
 
 		// Flasing light
 		timerCounter += 0.1*tmod;  // Fix this 
@@ -101,11 +93,21 @@ class Hero extends Entity {
 			
 		}
 
-		// Engine
 
-	    // var g = new h2d.Graphics(spr);
-		// g.beginFill(0x0000ff,0.01);
-        // g.drawRect(dx-1824,dy-91,1700,16);
-		
+		if(ca.bDown()) {
+			// Fwd Missile
+			enginedx += 22*tmod;
+			fx.fxpixel(spr.x + enginedx+170, spr.y-38, 0x00ff00, 2);
+
+			fx.lightSpot(
+				spr.x + enginedx+170,
+				spr.y-38,
+				Color.interpolateInt(0xff0000,0xffcc00,rnd(0,1)),
+				0.2
+			);
+
+		}
+
+		// end
 	}
 }
